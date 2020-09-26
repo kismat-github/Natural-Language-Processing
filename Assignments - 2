@@ -1,0 +1,17 @@
+# TASK 
+#1 Download nltk library
+import nltk
+nltk.download()
+output
+NLTK Downloader
+---------------------------------------------------------------------------
+    d) Download   l) List    u) Update   c) Config   h) Help   q) Quit
+---------------------------------------------------------------------------
+Downloader> c
+Data Server:
+  - URL: <https://raw.githubusercontent.com/nltk/nltk_data/gh-pages/index.xml>
+  
+ #2
+ import brown corpus and access data
+brown.words(categories='adventure')
+
