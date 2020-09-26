@@ -123,4 +123,20 @@ print(html)
 output
 
 #6
+from nltk.tokenize import word_tokenize
+from bs4 import BeautifulSoup
+raw = BeautifulSoup(html, 'html.parser').get_text()
+tokens = word_tokenize(raw)
+print(len(tokens))
+print(tokens)
+output
+
+#7
+import nltk
+tokens = tokens[:10615]
+text = nltk.Text(tokens)
+text.concordance('News')
+output
+
+
 
