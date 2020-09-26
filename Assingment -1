@@ -1,3 +1,4 @@
+# 1 BASIC TEXT PROCESSING PIPELINE
 In [5]: import nltk
         texts = "I am the only person who can run this program too much efficiently."
         for text in texts:
@@ -81,4 +82,45 @@ In [5]: import nltk
 [('I', 'PRP'), ('am', 'VBP'), ('the', 'DT'), ('only', 'JJ'), ('person', 'NN'), ('who', 'WP'), ('can', 'MD'), ('run', 'VB'), ('this', 'DT'), ('program', 'NN'), ('too', 'RB'), ('much', 'JJ'), ('efficiently', 'RB'), ('.', '.')]
 [('I', 'PRP'), ('am', 'VBP'), ('the', 'DT'), ('only', 'JJ'), ('person', 'NN'), ('who', 'WP'), ('can', 'MD'), ('run', 'VB'), ('this', 'DT'), ('program', 'NN'), ('too', 'RB'), ('much', 'JJ'), ('efficiently', 'RB'), ('.', '.')]
 In [ ]:
-​
+
+# 2chinese segmentation of jieba
+
+
+import jieba
+seg=jieba.cut("把句子中所有的可以成词的词语都扫描出来",cut_all=True)
+print(" ".join(seg))
+
+output
+把 句子 中所 所有 的 可以 成 词 的 词语 都 扫描 描出 描出来 出来
+
+#3 tweettokenizer
+import nltk
+from nltk.tokenize import TweetTokenizer
+text='The party was soooo fun: D #superfun'
+twtkn=TweetTokenizer()
+twtkn.tokenize(text)
+
+output
+['The', 'party', 'was', 'soooo', 'fun', ':', 'D', '#superfun']
+
+#4 Scrapping Data from Web
+from urllib import request
+url="http://www.gutenberg.org/files/2554/2554-0.txt"
+response=request.urlopen(url)
+raw=response.read().decode('utf8')
+type(raw)
+from nltk.tokenize import word_tokenize
+tokens=word_tokenize(raw)
+type(tokens)
+output
+
+#5
+from urllib import request 
+url = "https://timesofindia.indiatimes.com/"
+html = request.urlopen(url).read().decode('utf8')
+html[:60]
+print(html)
+output
+
+#6
+
